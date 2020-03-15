@@ -51,9 +51,8 @@ class _RefreshPageState extends State<RefreshPage> {
         onRefresh:
             _onRefresh, // we are going to inplement _onRefresh and _onLoading below our build method
         onLoading: _onLoading,
-        child: timeo()
-            ? txtlist()
-            : CircularProgressIndicator(), // we are going to create a list of text in this dynamic ii()
+        child:
+            loadingpage(), // we are going to create a list of text in this dynamic ii()
       ),
     );
   }
@@ -85,14 +84,6 @@ class _RefreshPageState extends State<RefreshPage> {
     );
   }
 
-  timeo() {
-    setState(() {
-      Timer(Duration(seconds: 5), () {
-        CircularProgressIndicator();
-      });
-    });
-  }
-
   _onLoading() {
     _refreshController
         .loadComplete(); // after data returned,set the footer state to idle
@@ -115,6 +106,27 @@ class _RefreshPageState extends State<RefreshPage> {
 // resetFooterState : it will set the footer state from noData to idle
         }
       });
+    });
+  }
+
+  loadingpage() {
+    FutureBuilder(builder: (context, load) {
+      switch (load.connectionState) {
+        case ConnectionState.none:
+          return Text('');
+          break;
+        case ConnectionState.waiting:
+          return CircularProgressIndicator();
+          break;
+        case ConnectionState.active:
+          return Text('');
+          break;
+        case ConnectionState.done:
+          return txtlist();
+          break;
+        default:
+      }
+      return Text('');
     });
   }
 }
