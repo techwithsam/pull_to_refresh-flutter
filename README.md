@@ -1,6 +1,16 @@
-# flutter_pull_to_refresh
 
-A new Flutter project.
+- [Read more](https://medium.com/@samuelbeebest/how-to-use-pull-to-refresh-in-flutter-d2a73df540df),
+
+Follow me on Social Media:
+
+- [GitHub](https://www.github.com/acctgen1)
+- [Medium](https://medium.com/@samuelbeebest)
+- [Facebook](https://www.facebook.com/acctgen1)
+- [Twitter](https://www.twitter.com/acctgen1)
+- [Instagram](https://www.instagram.com/acctgen1)
+
+
+# flutter_pull_to_refresh
 
 ## Getting Started
 
@@ -15,12 +25,3 @@ For help getting started with Flutter, view our
 [online documentation](https://flutter.dev/docs), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
 "# pull_to_refresh-flutter" 
-
-- [Read more](https://medium.com/@samuelbeebest/how-to-use-pull-to-refresh-in-flutter-d2a73df540df),
-Follow me on Social Media:
-
-- [GitHub](https://www.github.com/acctgen1)
-- [Medium](https://medium.com/@samuelbeebest)
-- [Facebook](https://www.facebook.com/acctgen1)
-- [Twitter](https://www.twitter.com/acctgen1)
-- [Instagram](https://www.instagram.com/acctgen1)
