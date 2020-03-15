@@ -52,7 +52,7 @@ class _RefreshPageState extends State<RefreshPage> {
             _onRefresh, // we are going to inplement _onRefresh and _onLoading below our build method
         onLoading: _onLoading,
         child:
-            loadingpage(), // we are going to create a list of text in this dynamic ii()
+            txtlist(), // we are going to create a list of text in this dynamic ii()
       ),
     );
   }
@@ -108,26 +108,26 @@ class _RefreshPageState extends State<RefreshPage> {
       });
     });
   }
-
-  loadingpage() {
-    FutureBuilder(
-      future: txtlist(),
-      builder: (context, load) {
-      switch (load.connectionState) {
-        case ConnectionState.none:
-          return Text('');
-          break;
-        case ConnectionState.waiting:
-          return CircularProgressIndicator();
-          break;
-        case ConnectionState.active:
-          return Text('');
-          break;
-        case ConnectionState.done:
-          return txtlist();
-          break;
-      }
-      return Text('');
-    });
-  }
+  
+  // loadingpage() {
+  //   FutureBuilder(
+  //     future: txtlist(),
+  //     builder: (context, load) {
+  //     switch (load.connectionState) {
+  //       case ConnectionState.none:
+  //         return Text('');
+  //         break;
+  //       case ConnectionState.waiting:
+  //         return CircularProgressIndicator();
+  //         break;
+  //       case ConnectionState.active:
+  //         return Text('');
+  //         break;
+  //       case ConnectionState.done:
+  //         return txtlist();
+  //         break;
+  //     }
+  //     return Text('');
+  //   });
+  // }
 }
