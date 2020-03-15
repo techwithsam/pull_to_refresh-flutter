@@ -110,7 +110,9 @@ class _RefreshPageState extends State<RefreshPage> {
   }
 
   loadingpage() {
-    FutureBuilder(builder: (context, load) {
+    FutureBuilder(
+      future: txtlist(),
+      builder: (context, load) {
       switch (load.connectionState) {
         case ConnectionState.none:
           return Text('');
