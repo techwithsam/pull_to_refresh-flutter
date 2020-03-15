@@ -1,6 +1,9 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_pull_to_refresh/customFunc.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
+import 'nextpage.dart';
 
 class RefreshPage extends StatefulWidget {
   @override
@@ -48,8 +51,9 @@ class _RefreshPageState extends State<RefreshPage> {
         onRefresh:
             _onRefresh, // we are going to inplement _onRefresh and _onLoading below our build method
         onLoading: _onLoading,
-        child:
-            txtlist(), // we are going to create a list of text in this dynamic ii()
+        child: timeo()
+            ? txtlist()
+            : CircularProgressIndicator(), // we are going to create a list of text in this dynamic ii()
       ),
     );
   }
@@ -68,10 +72,25 @@ class _RefreshPageState extends State<RefreshPage> {
                     TextStyle(color: Colors.red, fontWeight: FontWeight.bold)),
             leading: Text('$index'),
             subtitle: Text('subtitle'),
+            trailing: IconButton(
+              icon: Icon(Icons.arrow_forward),
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => NextPage()));
+              },
+            ),
           ),
         );
       },
     );
+  }
+
+  timeo() {
+    setState(() {
+      Timer(Duration(seconds: 5), () {
+        CircularProgressIndicator();
+      });
+    });
   }
 
   _onLoading() {
