@@ -124,7 +124,6 @@ class _RefreshPageState extends State<RefreshPage> {
         case ConnectionState.done:
           return txtlist();
           break;
-        default:
       }
       return Text('');
     });
